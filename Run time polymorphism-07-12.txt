@@ -1,0 +1,131 @@
+
+//1st Example 
+
+class A {
+	void display1() {
+		System.out.println("A class method ");
+	}
+}
+class B extends A {
+	@Override
+	void display1() {
+		System.out.println("A class method - override");
+	}
+	void display2() {
+		System.out.println("B class method");
+	}
+}
+class Test {
+	public static void main(String args[]) {
+	A obj1 =new A();		obj1.display1();	//obj1.display2();	
+	B obj2 = new B();		obj2.display1();	obj2.display2();
+	//B obj3 = new A();
+	A obj4 = new B();		//sub class object super class reference. 
+	obj4.display1();	//obj4.display2();
+	}
+}
+
+2nd Example 
+
+abstract class A {
+	abstract void display1();
+}
+class B extends A {
+	@Override
+	void display1() {
+		System.out.println("A class method - override");
+	}
+	void display2() {
+		System.out.println("B class method");
+	}
+}
+class Test {
+	public static void main(String args[]) {
+	//A obj1 =new A();		obj1.display1();	//obj1.display2();	
+	B obj2 = new B();		obj2.display1();	obj2.display2();
+	//B obj3 = new A();
+	A obj4 = new B();		//sub class object super class reference. 
+	//obj4.display1();	//obj4.display2();
+	}
+}
+
+3rd Example 
+
+interface A {
+	void display1();
+}
+class B implements A {
+	@Override
+	public void display1() {
+		System.out.println("A interface method - override");
+	}
+	void display2() {
+		System.out.println("B class method");
+	}
+}
+class Test {
+	public static void main(String args[]) {
+	//A obj1 =new A();		obj1.display1();	//obj1.display2();	
+	B obj2 = new B();		obj2.display1();	obj2.display2();
+	//B obj3 = new A();
+	A obj4 = new B();		//sub class object super class reference. 
+	obj4.display1();	//obj4.display2();
+	}
+}
+
+
+4th Example 
+
+interface A {
+	int add(int x, int y);
+}
+interface B {
+	int sub(int x, int y);
+}
+
+class Cal implements  A,B {
+	public int add(int x, int y){
+		return x+y;
+	}
+	public int sub(int x, int y){
+		return x-y;
+	}
+	public void ownMethod() {
+		System.out.println("Cal class own method");
+	}
+}
+class Test {
+	public static void main(String args[]) {
+	Cal obj1 = new Cal();	obj1.add(10,20);	obj1.sub(20,30);
+	A obj2 = new Cal();
+	B obj3 = new Cal();
+	System.out.println(obj2.add(20,10));
+	//System.out.println(obj2.sub(20,10));
+	System.out.println(obj3.sub(20,10));
+	//System.out.println(obj1.sub(20,10));
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

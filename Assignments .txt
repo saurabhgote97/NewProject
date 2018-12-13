@@ -1,0 +1,23 @@
+class Employee {
+		id,name,salary Scanner 	
+			read()
+		calSalary()
+			display()
+	}
+	class Manager  extends Employee{
+		numberOfEmp;
+		Address add = new Adress();
+			readMgr()
+				add.readAdd();
+		displayMgr()
+			add.displayAdd();
+	}
+	class Address {
+		city, state 	Scanner obj 
+		readAdd();	
+		displayAdd()
+	}
+
+	class EmployeeTest {
+		main method 
+	}

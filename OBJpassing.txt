@@ -1,0 +1,32 @@
+class Employee {
+	int id;
+	Employee() {
+		System.out.println("Object created....");
+	}
+	Employee passObject(Employee e1) {
+		System.out.println("Id in pass Object method "+e1.id);
+		e1.id=400;
+		return e1;
+	}
+        
+}
+class Test {
+	public static void main(String args[]) {
+	//Employee emp1 = new Employee();	
+	int abc=12;
+	Employee emp1,emp2,emp3;
+	new Employee();
+	emp1 = new Employee();
+	emp2 = new Employee();
+	emp3 = emp1;
+	emp1.id=100;	emp2.id=200;	emp3.id=300;
+	System.out.println(emp1.id);
+	System.out.println(emp2.id);
+	System.out.println(emp3.id);
+	Employee emp4 = emp1.passObject(emp2);
+	System.out.println(emp4.id);
+	}
+}
+
+
+
